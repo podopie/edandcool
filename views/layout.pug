@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700|Josefin+Slab:100,300,400,600,700|Nixie+One|Poppins:300,400,500,600,700")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    nav(class='navbar navbar-fixed-top')
+      div(class='container')
+        div(class='navbar-header')
+          p(class='navbar-text') #[a(class='someClass', href='#top') Home]
+          p(class='navbar-text') #[a(class='someClass', href='#and_the_story') &amp; The Story]
+          p(class='navbar-text') #[a(class='someClass', href='#and_the_gang') &amp; The Gang]
+          p(class='navbar-text') #[a(class='someClass', href='#and_the_place') &amp; The Place]
+    block content
+script(src="/zen/zenscroll.js")
+script(src='/javascripts/zen_custom.js')

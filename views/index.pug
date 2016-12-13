@@ -1,0 +1,133 @@
+extends layout
+
+block content
+  div(class='jumbotron' id='top')
+    h1
+      span(class='thin') PODO
+      span(class='bold') LAU
+  div(class='container')
+    div(class='col-md-12')
+      h2(id='and_the_story' class='txtcenter')
+        span(class='thin') The
+        span(class='bold')  Story
+    div(class='row row-grid')
+      div(class='col-md-offset-1 col-md-3')
+        img(src='images/map/map1.png' class='story')
+      div(class='col-md-7')
+        p Ed and Colleen met on July 4th, 2009 in San Francisco. Colleen thought Ed was creepy (and let's be real, he was). Shunned, he climbed a telephone poll in the middle of the Sunset District, fell awkwardly, and sprained his leg.
+
+    div(class='row row-grid')
+      div(class='col-md-offset-1 col-md-3')
+        img(src='images/map/map2.png' class='story')
+      div(class='col-md-7')
+        p Eventually they re-met thanks to a mutual friend, Steve Jobs. Colleen, now living in New York, bought a new Mac with a fancy web cam, and with some convincing from Thomson, talked to Ed with it. With the magic of blurry webcams, Colleen somehow found Ed attractive, and the two hit it off.
+
+    div(class='row row-grid')
+      div(class='col-md-offset-1 col-md-3')
+        img(src='images/map/map3.png' class='story')
+      div(class='col-md-7')
+        p Colleen and Ed figured dating was worth a shot after months of spending time with each other on "this will never need to be rebranded" chat service, iChat. Ed, off screen, made a "yussss" sound, and in October, flew out from his home base of Napa to spend a weekend with Colleen in New York.
+
+    div(class='row row-grid')
+      div(class='col-md-offset-1 col-md-3')
+        img(src='images/map/map4.png' class='story')
+      div(class='col-md-7')
+        p Many flights back and forth over two years occurred, confirming with Colleen's friends that she did in fact have a real boyfriend, and in 2011, Colleen helped Ed move to New York with a cross-country drive in his stick-shift Nissan Altima. Fun fact: Colleen doesn't drive stick.
+
+    div(class='row row-grid')
+      div(class='col-md-offset-1 col-md-3')
+        img(src='images/map/map5.png' class='story')
+      div(class='col-md-7')
+        p A PhD, a dog, and a "no Christmas gift rule" later, Ed proposed to Colleen on Christmas Day, 2015, with a giant rock [Pikmin plushy] he made.
+
+    div(class='col-md-12 top-buffer')
+      h2(id='and_the_gang' class='txtcenter')
+        span(class='thin') The
+        span(class='bold')  Gang
+      div(class='col-md-6')
+        h3
+          strong Bride's Side
+
+        each bridesmaid in bridesmaids
+          div(class="media")
+            a(class="media-left")
+              img(class="media-object" src='/images/' + bridesmaid.img width=100)
+            div(class="media-body")
+              h4(class="media-heading")= bridesmaid.name
+              p= bridesmaid.story
+
+      div(class='col-md-6')
+        h3
+          strong Groom's Room
+
+        each groomsman in groomsmen
+          div(class="media")
+            a(class="media-left")
+              img(class="media-object" src='/images/' + groomsman.img width=100)
+            div(class="media-body")
+              h4(class="media-heading")= groomsman.name
+              each story in groomsman.story
+                p(class='inline')= story
+
+
+    div(class='col-md-12')
+      h3(class='txtcenter')
+        strong With Special Guests...
+      div(class='col-md-12')
+        div(class='row row-grid')
+          div(class='col-md-offset-4 col-md-6')
+            div(class="media")
+              a(class="media-left")
+                img(class="media-object" src='/images/susi2.jpg' width=100)
+              div(class="media-body")
+                br
+                h4(class="media-heading txtleft") Susi the flower dog
+
+        div(class='row row-grid')
+          div(class='col-md-offset-4 col-md-6')
+            div(class="media")
+              a(class="media-left")
+                img(class="media-object" src='/images/khoa.jpg' width=100)
+              div(class="media-body")
+                br
+                h4(class="media-heading txtleft") Khoa Lam, Officiant
+
+  div(class='container top-buffer')
+    h2(id='and_the_place' class='txtcenter')
+      span(class='thin') The
+      span(class='bold')  Place
+
+  a(href='https://goo.gl/maps/jJhB2aey4sG2' target='_blank')
+    div(class='jumbotron address top-buffer')
+  div(class='container')
+    div(class='col-md-6')
+      h3
+        strong Do you even know?
+      h4 Date
+      p March 25, 2017
+
+      h4 Location
+      p #[a(class='someClass', href='http://bricksd.com/') Brick SD]
+      p 2863 Historic Decatur Road
+      p San Diego, CA 92106
+
+      h4 Attire
+      p Cocktail Attire
+
+    div(class='col-md-6')
+      h3
+        strong I want to go to there.
+      h4 From Downtown!
+      p Take the 5 North until exiting at Pacific Highway, then follow Barnett into Liberty Station.
+
+      h4 From the East
+      p Hop on the 8 West, and follow to take the Rosecrans St exit. Make a left on Lytton St, then take the entrance into Liberty Station.
+
+      h4 From the North
+      p Roll down the 15 South and merge onto the 163. Take the exit for the 8; follow "East" directions.
+
+  div(class='jumbotron susi')
+
+  div(class='container')
+      h1 see you there!
+      br

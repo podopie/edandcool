@@ -1,0 +1,155 @@
+body {
+    background: rgb(219, 215, 205);
+    color: #000;
+    padding-top: 50px;
+}
+
+body, .smooth-container { scroll-behavior: smooth }
+
+.jumbotron {
+    background: url('/images/head1.jpg') no-repeat top;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    bottom: 50px;
+}
+
+.jumbotron#top {
+    margin-bottom: -50px;
+}
+
+.jumbotron.address {
+    background: url('/images/address2.png') center;
+    height: 300px;
+    width: 100%;
+    bottom: 0;
+}
+
+.jumbotron.susi {
+    background: url('/images/family.jpg') no-repeat bottom;
+    background-size: cover;
+    height: 300px;
+    bottom: 0;
+}
+
+.jumbotron.attend {
+    background: url('/images/head2.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.story {
+    width: 100%;
+}
+
+a {
+    color: #000 !important;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    color: #000;
+    font-family: 'Nixie One';
+}
+
+h2 {
+    font-family: 'Josefin Sans';
+    font-variant: small-caps;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+.thin {
+    font-weight: 100;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.navbar-fixed-top {
+    /*background-color: rgb(219, 215, 205);*/
+    background-color: rgba(0, 0, 0, .8);
+    font-family: 'Josefin Sans';
+}
+
+.navbar p a {
+    color: #fff !important;
+}
+
+p, li {
+    font-family: 'Poppins';
+}
+
+p.inline {
+    margin: 0;
+}
+
+img.fullbleed {
+    width: 100%;
+}
+
+/* class overrides */
+.page-header {
+    border-bottom: #000 1px solid;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.txtcenter {
+    text-align: center;
+}
+
+.txtleft {
+    text-align: left;
+}
+
+img.media-object {
+  border-radius: 50%;
+}
+
+.jumbotron h1 {
+    font-size: 118px;
+    color: rgba(8,16,32,1);
+    font-family: 'Josefin Sans';
+}
+
+.row.row-grid [class*="col-"] + [class*="col-"] {
+    margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+    }
+}
+@media (min-width: 992px) {
+    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
+    }
+}
+@media (min-width: 768px) {
+    .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
+        margin-top: 0;
+    }
+}
+
+.row-grid + .row-grid {
+    margin-top: 15px;
+}
+
+em {
+    font-family: 'Nixie One';
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.media {
+    min-height: 120px;
+}
