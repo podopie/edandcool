@@ -56,7 +56,7 @@ var bridesmaids = [{
     story: 'Thanks to Tamagotchi and the school bus, Ann and Colleen have a 16+ year friendship. She trusts Colleen with everything except plucking her eyebrows.',
 },{
     name: 'Phong "Ong-Ong" Bui',
-    img: 'girls/phong_baby.jpg',
+    img: 'girls/phongbaby.jpg',
     story: 'Born in Vietnam and raised in SoCal Vietnam, Phong met Colleen in college. Later he housed her in his windowless cave in Brooklyn.',
 }]
 /* GET home page. */

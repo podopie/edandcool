@@ -30,7 +30,7 @@ var router = express.Router();
 
 router.use('/', routes);
 
-app.use('/', router);
+app.use('/een', router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
