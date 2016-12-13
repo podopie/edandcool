@@ -1,5 +1,3 @@
-// mongoose config
-//require('./database');
 
 var express = require('express');
 var zen = require('zenscroll');
