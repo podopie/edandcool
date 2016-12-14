@@ -33,6 +33,7 @@ var groomsmen = [{
 var bridesmaids = [{
     name: 'Phui "the H is silent" Lau',
     img: 'girls/sis_baby.jpg',
+    // story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, <a href="http://www.instagram.com/misslolalau">Lola</a>. Like any responsible older sibling, she offered Colleen her first beer.',
     story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, Lola. Like any responsible older sibling, she offered Colleen her first beer.',
 },{
     name: 'Katie "Heeeey roomie" Sawai',
@@ -45,7 +46,7 @@ var bridesmaids = [{
 },{
     name: 'Nam "U D Man" Du',
     img: 'girls/nam_baby.jpg' ,
-    story: 'She and Colleen co-starred as Daddy and his Roommate for a high school video book report, and have a common love for sushi and long, satisfying burps.',
+    story: 'Nam and Colleen co-starred as Daddy and his Roommate for a high school video book report, and have a common love for sushi and long, satisfying burps.',
 },{
     name: 'Linda "El Phoutha" Phouthavone',
     img: 'girls/linda_baby.jpg',
@@ -77,7 +78,7 @@ router.get('/and/:attendant_id', function(req, res) {
 });
 
 /* POST form. */
-router.post('/thankyou', function(req, res) {
+router.post('/thanks', function(req, res) {
     console.log(req.body);
     res.render('thanks', {req: req });
 });

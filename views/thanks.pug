@@ -1,4 +1,4 @@
-extends layout
+extends flayout
 
 block content
   div(class='jumbotron' id='top')
@@ -9,14 +9,14 @@ block content
     div(class='col-md-6')
       h1 THANKS HOMIES!
       h2 Your Response:
+      p=req.body.name0
+      p=req.body.food_choice0
+      p=req.body.foodchoice0
+      p=req.body.allergies0
+      p=req.body.cake_preference0
+      br
       p=req.body.name1
       p=req.body.food_choice1
       p=req.body.foodchoice1
       p=req.body.allergies1
       p=req.body.cake_preference1
-      br
-      p=req.body.name2
-      p=req.body.food_choice2
-      p=req.body.foodchoice2
-      p=req.body.allergies2
-      p=req.body.cake_preference2

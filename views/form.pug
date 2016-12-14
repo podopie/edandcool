@@ -1,69 +1,45 @@
-extends layout
+extends flayout
 
 block content
   div(class='jumbotron attend' id='top')
     h1
       span(class='thin') PODO
-      span(class='bold') LAU
+      span(class='bold')  LAU
   div(class='container')
-    div(class='col-md-6')
-      form(method="post" action="/thankyou")
-        h3=attendees[0]
-        div.form-group
-          label(for="name1") Name:
-          input(type="text", name="name1", value=attendees[0], class="form-control")
-        div.form-group
-          label(for="attend_choice1") Attendance Preference:
-          select.form-control(name='attend_choice1')
-            option Will be in attendance
-            option Will not be in attendance
-        div.form-group
-          label(for="food_choice1") Meal Preference:
-          select.form-control(name='food_choice1')
-            option Duo (Beef and Fish)
-            option Beef
-            option Fish
-            option Vegetarian
-        div.form-group
-          label(for="allergies1") Allergies:
-          input(type="text", name="allergies1", value=comment, class="form-control")
-        div.form-group
-          label(for="cake_preference1") Cake Preference:
-          p
-            em Dessert courtesy of Extraordinary Desserts in Balboa Park.
-          select.form-control(name='cake_preference1')
-            option Shangri-la
-            option Salted Caramel Butterscotch Pecan Cake
-            option Balboa
-        h3=attendees[1]
-        div.form-group
-          label(for="name2") Name:
-          input(type="text", name="name2", value=attendees[1], class="form-control")
-        div.form-group
-          label(for="attend_choice2") Attendance Preference:
-          select.form-control(name='attend_choice2')
-            option Will be in attendance
-            option Will not be in attendance
-        div.form-group
-          label(for="food_choice2") Meal Preference:
-          select.form-control(name='food_choice2')
-            option Duo (Beef and Fish)
-            option Beef
-            option Fish
-            option Vegetarian
-        div.form-group
-          label(for="allergies2") Allergies:
-          input(type="text", name="allergies2", value=comment, class="form-control")
-        div.form-group
-          label(for="cake_preference2") Cake Preference:
-          p
-            em Dessert courtesy of Extraordinary Desserts in Balboa Park.
-          select.form-control(name='cake_preference2')
-            option Shangri-la
-            option Salted Caramel Butterscotch Pecan Cake
-            option Balboa
-        input(type="submit", value="Are you ready?", class="btn btn-primary")
-      br
+    h3='RSVP For: '+ attendees[0]
+    form(method="post" action="/een/thanks")
+      for attendee, i in attendees
+        div(class='col-md-6')
+            div.form-group
+              label(for="name"+i) Name:
+              input(type="text", name="name"+i, value=attendee, class="form-control")
+            div.form-group
+              label(for="attend_choice"+i) Attendance:
+              select.form-control(name='attend_choice'+i)
+                option Will be in attendance
+                option Will not be in attendance
+            div.form-group
+              label(for="food_choice"+i) Meal Preference:
+              select.form-control(name='food_choice'+i)
+                option Duo (Beef and Fish)
+                option Beef
+                option Fish
+                option Vegetarian
+            div.form-group
+              label(for="allergies"+i) Allergies:
+              input(type="text", name="allergies"+i, value=comment, class="form-control")
+            div.form-group
+              label(for="cake_preference"+i) Cake Preference:
+              select.form-control(name='cake_preference'+i)
+                option Shangri-la (white chocolate and guava mousse, strawberries, vanilla cake)
+                option Salted Caramel Butterscotch Pecan Cake
+                option Gianduia (rum chocolate cake, hazelnut buttercream, boysenberry preserves)
+
+      input(type="submit", value="Are you ready?", class="btn btn-primary")
+
+      p
+        em
+          small Dessert courtesy of Extraordinary Desserts in Balboa Park.
 
 //- Both names listed (si/nay coming?)
 //- if immediate family or friendz: how many kidz?

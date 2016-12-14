@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 
 // routes requirements
 var routes = require('./routes/index');
+var redirector = require('./routes/redirect');
 
 var app = express();
 
@@ -28,9 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 var router = express.Router();
 
-router.use('/', routes);
+router.use('/een', routes);
+router.use('/', redirector);
 
-app.use('/een', router);
+app.use('/', router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

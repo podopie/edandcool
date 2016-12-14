@@ -4,10 +4,14 @@ body {
     padding-top: 50px;
 }
 
+body .bold {
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+}
+
 body, .smooth-container { scroll-behavior: smooth }
 
 .jumbotron {
-    background: url('/images/head1.jpg') no-repeat top;
+    background: url('/images/head1.jpg') no-repeat bottom right;
     background-size: cover;
     height: 600px;
     position: relative;
@@ -48,6 +52,7 @@ a {
 h1, h2, h3, h4, h5, h6, label {
     color: #000;
     font-family: 'Nixie One';
+    font-weight: 800;
 }
 
 h2 {
@@ -79,6 +84,8 @@ h2 {
 
 p, li {
     font-family: 'Poppins';
+    font-weight: 100;
+    color: rgb(54, 53, 51);
 }
 
 p.inline {
@@ -137,6 +144,7 @@ img.media-object {
         margin-top: 0;
     }
 }
+
 
 .row-grid + .row-grid {
     margin-top: 15px;
