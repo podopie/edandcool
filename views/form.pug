@@ -21,6 +21,7 @@ block content
             div.form-group
               label(for="food_choice"+i) Meal Preference:
               select.form-control(name='food_choice'+i)
+                option ---
                 option Duo (Beef and Fish)
                 option Beef
                 option Fish
@@ -31,15 +32,16 @@ block content
             div.form-group
               label(for="cake_preference"+i) Cake Preference:
               select.form-control(name='cake_preference'+i)
+                option ---
                 option Shangri-la (white chocolate and guava mousse, strawberries, vanilla cake)
                 option Salted Caramel Butterscotch Pecan Cake
                 option Gianduia (rum chocolate cake, hazelnut buttercream, boysenberry preserves)
+      div(class='col-md-12')
+        input(type="submit", value="Are you ready?", class="btn btn-primary")
 
-      input(type="submit", value="Are you ready?", class="btn btn-primary")
-
-      p
-        em
-          small Dessert courtesy of Extraordinary Desserts in Balboa Park.
+        p
+          em
+            small Dessert courtesy of Extraordinary Desserts in Balboa Park.
 
 //- Both names listed (si/nay coming?)
 //- if immediate family or friendz: how many kidz?

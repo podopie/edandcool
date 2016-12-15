@@ -10,10 +10,25 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.3.3",
     "express": "~4.14.0",
+    "google-auth-library": "^0.9.10",
+    "googleapis": "^15.0.0",
     "handlebars": "^4.0.6",
-    "pug": "~2.0.0-beta6",
     "morgan": "~1.7.0",
+    "pug": "~2.0.0-beta6",
     "serve-favicon": "^2.3.2",
     "zenscroll": "~3.3.0"
-  }
+  },
+  "description": "yobro",
+  "main": "main.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/podopie/edandcool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/podopie/edandcool/issues"
+  },
+  "homepage": "https://github.com/podopie/edandcool#readme"
 }

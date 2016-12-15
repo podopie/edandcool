@@ -11,8 +11,7 @@ body .bold {
 body, .smooth-container { scroll-behavior: smooth }
 
 .jumbotron {
-    background: url('/images/head1.jpg') no-repeat bottom right;
-    background-size: cover;
+    background: url('/images/head1.jpg') no-repeat center right;
     height: 600px;
     position: relative;
     bottom: 50px;
@@ -38,6 +37,11 @@ body, .smooth-container { scroll-behavior: smooth }
 
 .jumbotron.attend {
     background: url('/images/head2.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.jumbotron.thanks {
+    background: url('/images/head3.jpg') no-repeat center;
     background-size: cover;
 }
 
