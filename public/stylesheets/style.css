@@ -36,12 +36,12 @@ body, .smooth-container { scroll-behavior: smooth }
 }
 
 .jumbotron.attend {
-    background: url('/images/head2.jpg') no-repeat center;
+    background: url('/images/head3.jpg') no-repeat center;
     background-size: cover;
 }
 
 .jumbotron.thanks {
-    background: url('/images/head3.jpg') no-repeat center;
+    background: url('/images/head2.jpg') no-repeat bottom;
     background-size: cover;
 }
 
@@ -51,6 +51,15 @@ body, .smooth-container { scroll-behavior: smooth }
 
 a {
     color: #000 !important;
+    text-decoration: underline;
+}
+
+.navbar-text a {
+    text-decoration: none;
+}
+
+.fixheight {
+    min-height: 50px;
 }
 
 h1, h2, h3, h4, h5, h6, label {
@@ -148,7 +157,18 @@ img.media-object {
         margin-top: 0;
     }
 }
-
+@media (max-width: 480px) {
+    .jumbotron h1 {
+        font-size: 62px;
+    }
+    .jumbotron {
+        background-position: 85% -170px;
+    }
+    .jumbotron.thanks {
+        background-position: 85% 0px;
+        height: 300px;
+    }
+}
 
 .row-grid + .row-grid {
     margin-top: 15px;

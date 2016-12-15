@@ -2,11 +2,8 @@ extends flayout
 
 block content
   div(class='jumbotron thanks' id='top')
-    h1
-      span(class='thin') PODO
-      span(class='bold') LAU
   div(class='container')
-    div(class='col-md-6')
+    div(class='col-md-12')
       h1 Thank You!
       h3 Your RSVP is below:
       p <strong>Name:</strong> #{req.body.name0}
@@ -21,3 +18,6 @@ block content
         p <strong>Meal:</strong> #{req.body.food_choice1}
         p <strong>Allergies:</strong> #{req.body.allergies1}
         p <strong>Cake:</strong> #{req.body.cake_preference1}
+    div(class='col-md-12')
+      p
+        a(href='/een') Back to main page
