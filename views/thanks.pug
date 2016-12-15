@@ -7,17 +7,17 @@ block content
       span(class='bold') LAU
   div(class='container')
     div(class='col-md-6')
-      h1 THANKS HOMIES!
-      h2 Your RSVP is below:
-      p Name: #{req.body.name0}
-      p Attendance: #{req.body.attend_choice0}
-      p Meal: #{req.body.food_choice0}
-      p Allergies: #{req.body.allergies0}
-      p Cake: #{req.body.cake_preference0}
+      h1 Thank You!
+      h3 Your RSVP is below:
+      p <strong>Name:</strong> #{req.body.name0}
+      p <strong>Attendance:</strong> #{req.body.attend_choice0}
+      p <strong>Meal:</strong> #{req.body.food_choice0}
+      p <strong>Allergies:</strong> #{req.body.allergies0}
+      p <strong>Cake:</strong> #{req.body.cake_preference0}
       br
       if req.body.name1
-        p Name: #{req.body.name1}
-        p Attendance: #{req.body.attend_choice1}
-        p Meal: #{req.body.food_choice1}
-        p Allergies: #{req.body.allergies1}
-        p Cake: #{req.body.cake_preference1}
+        p <strong>Name:</strong> #{req.body.name1}
+        p <strong>Attendance:</strong> #{req.body.attend_choice1}
+        p <strong>Meal:</strong> #{req.body.food_choice1}
+        p <strong>Allergies:</strong> #{req.body.allergies1}
+        p <strong>Cake:</strong> #{req.body.cake_preference1}
