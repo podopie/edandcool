@@ -15,6 +15,7 @@ body, .smooth-container { scroll-behavior: smooth }
     height: 600px;
     position: relative;
     bottom: 50px;
+    border: 1px solid rgb(110, 108, 102);
 }
 
 .jumbotron#top {
@@ -29,7 +30,7 @@ body, .smooth-container { scroll-behavior: smooth }
 }
 
 .jumbotron.susi {
-    background: url('/images/family.jpg') no-repeat bottom;
+    background: url('/images/susi3.jpg') no-repeat bottom;
     background-size: cover;
     height: 300px;
     bottom: 0;
@@ -64,8 +65,8 @@ a {
 
 h1, h2, h3, h4, h5, h6, label {
     color: #000;
-    font-family: 'Nixie One';
-    font-weight: 800;
+    font-family: 'Sanchez';
+    font-weight: 400;
 }
 
 h2 {
@@ -142,40 +143,54 @@ img.media-object {
     margin-top: 15px;
 }
 
-@media (min-width: 1200px) {
-    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-        margin-top: 0;
+@media (max-width: 480px) {
+    .jumbotron h1 {
+        font-size: 62px;
     }
-}
-@media (min-width: 992px) {
-    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
-        margin-top: 0;
+    .jumbotron {
+        background-position: 85% -20px;
+        background-size: 260%;
+    }
+    .jumbotron.thanks {
+        background-position: 85% 0px;
+        height: 300px;
+    }
+    .jumbotron.susi {
+        background-position: 75%;
     }
 }
 @media (min-width: 768px) {
     .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
         margin-top: 0;
     }
+    .jumbotron {
+        background-position: 85% 0px;
+        background-size: 100%;
+    }
 }
-@media (max-width: 480px) {
-    .jumbotron h1 {
-        font-size: 62px;
+@media (min-width: 992px) {
+    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
     }
     .jumbotron {
-        background-position: 85% -170px;
-    }
-    .jumbotron.thanks {
-        background-position: 85% 0px;
-        height: 300px;
+        background-position: 0px -210px;
+        background-size: 100%;
     }
 }
+@media (min-width: 1200px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+    }
+}
+
+
 
 .row-grid + .row-grid {
     margin-top: 15px;
 }
 
 em {
-    font-family: 'Nixie One';
+    font-family: 'Sanchez';
 }
 
 .top-buffer {
