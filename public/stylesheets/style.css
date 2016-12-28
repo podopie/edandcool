@@ -9,30 +9,44 @@ body .bold {
 }
 
 body, .smooth-container { scroll-behavior: smooth }
-.right {text-align: right;}
 
+img {
+  image-rendering: crisp-edges;
+}
 
 .fill {
-    background: url('/images/fill.jpeg') no-repeat right bottom;
-    background-size: cover;
-    height: 100%;
+    background: url('/images/background.jpg') no-repeat right top;
+    height: 500px;
+}
+
+.jumbotron h1 {
+    font-size: 118px;
+    color: rgba(8,16,32,1);
+    font-family: 'Josefin Sans';
 }
 
 .jumbotron {
-    background: url('/images/head1.jpg') no-repeat right bottom;
-    /*background-size: 100%;*/
-    min-height: 100%;
+    background: url('/images/head1b.jpg') no-repeat right bottom;
     height: 600px;
     width: 100%;
     position: relative;
     bottom: 50px;
     border-bottom: 1px solid rgb(110, 108, 102);
     border-top: 1px solid rgb(110, 108, 102);
-
 }
 
 .jumbotron#top {
     margin-bottom: -50px;
+}
+
+.jumbotron.thanks {
+    background: url('/images/head2b.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.jumbotron.attend {
+    background: url('/images/head3b.jpg') no-repeat center;
+    background-size: cover;
 }
 
 .jumbotron.address {
@@ -40,23 +54,6 @@ body, .smooth-container { scroll-behavior: smooth }
     height: 300px;
     width: 100%;
     bottom: 0;
-}
-
-.jumbotron.susi {
-    background: url('/images/susi4.jpg') no-repeat right;
-    background-size: cover;
-    height: 100px;
-    bottom: 0;
-}
-
-.jumbotron.attend {
-    background: url('/images/head3.jpg') no-repeat center;
-    background-size: cover;
-}
-
-.jumbotron.thanks {
-    background: url('/images/head2.jpg') no-repeat center;
-    background-size: cover;
 }
 
 .story {
@@ -85,9 +82,6 @@ h1, h2, h3, h4, h5, h6, label {
 h2 {
     font-family: 'Josefin Sans';
     font-variant: small-caps;
-}
-
-h2 {
     font-size: 48px;
 }
 
@@ -100,7 +94,6 @@ h2 {
 }
 
 .navbar-fixed-top {
-    /*background-color: rgb(219, 215, 205);*/
     background-color: rgba(0, 0, 0, .8);
     font-family: 'Josefin Sans';
 }
@@ -142,6 +135,10 @@ img.fullbleed {
     text-align: left;
 }
 
+.right {
+    text-align: right;
+}
+
 img.media-object {
   border-radius: 50%;
 }
@@ -168,76 +165,9 @@ img.media-object {
     font-family: 'Josefin Sans';
 }
 
-.jumbotron h1 {
-    font-size: 118px;
-    color: rgba(8,16,32,1);
-    font-family: 'Josefin Sans';
-}
-
 .row.row-grid [class*="col-"] + [class*="col-"] {
     margin-top: 15px;
 }
-
-@media (max-width: 480px) {
-    .jumbotron h1 {
-        font-size: 62px;
-    }
-    .jumbotron {
-        background-position: 85% -20px;
-        background-size: 260%;
-    }
-    .jumbotron.thanks {
-        background-position: 85% 0px;
-        height: 300px;
-    }
-    .footer span {
-        font-size: 32px;
-        color: rgba(8,16,32,1);
-        font-family: 'Josefin Sans';
-    }
-}
-@media (min-width: 480px) {
-    .jumbotron {
-        background-position: 85% -20px;
-        background-size: cover;
-    }
-    .jumbotron h1 {
-        font-size: 96px;
-    }
-}
-@media (min-width: 768px) {
-    .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
-        margin-top: 0;
-    }
-    .jumbotron {
-        background-position: 85% 70%;
-    }
-    .footer span {
-        font-size: 44px;
-        color: rgba(8,16,32,1);
-        font-family: 'Josefin Sans';
-    }
-}
-@media (min-width: 992px) {
-    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
-        margin-top: 0;
-    }
-    .jumbotron {
-        background-position: center -210px;
-    }
-}
-@media (min-width: 1200px) {
-    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-        margin-top: 0;
-    }
-@media (min-width: 1440px) {
-    .jumbotron {
-        height: 850px;
-        background-position: center 0;
-    }
-}
-
-
 
 .row-grid + .row-grid {
     margin-top: 15px;
@@ -253,4 +183,78 @@ em {
 
 .media {
     min-height: 120px;
+}
+
+@media (max-width: 480px) {
+    .jumbotron h1 {
+        font-size: 62px;
+    }
+    .jumbotron {
+        background-position: 85% -20px;
+        background-size: 260%;
+        height: 540px;
+    }
+    .jumbotron.thanks {
+        background-position: 85% 0px;
+        height: 300px;
+    }
+    .footer span {
+        font-size: 32px;
+        color: rgba(8,16,32,1);
+        font-family: 'Josefin Sans';
+    }
+    .fill {
+        height: 490px;
+    }
+}
+@media (min-width: 480px) {
+    .jumbotron {
+        background-position: -450px -190px;
+        /*background-size: cover;*/
+        height: 579px;
+    }
+    .jumbotron h1 {
+        font-size: 96px;
+    }
+    .fill {
+        height: 529px;
+    }
+}
+@media (min-width: 768px) {
+    .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
+        margin-top: 0;
+    }
+    .jumbotron {
+        background-position: 85% 70%;
+        background-size: initial;
+    }
+    .footer span {
+        font-size: 44px;
+        color: rgba(8,16,32,1);
+        font-family: 'Josefin Sans';
+    }
+}
+@media (min-width: 992px) {
+    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
+    }
+    .jumbotron {
+        background-position: center -210px;
+        height: 550px;
+    }
+}
+@media (min-width: 1200px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+    }
+    .fill {
+        height: 500px;
+    }
+}
+@media (min-width: 1440px) {
+    .jumbotron {
+        height: 550px;
+        /*background-size: 100%;*/
+        /*background-position: bottom 0;*/
+    }
 }
