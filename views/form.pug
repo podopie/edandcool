@@ -2,9 +2,11 @@ extends flayout
 
 block content
   div(class='jumbotron attend' id='top')
-    h1
-      span(class='thin') PODO
-      span(class='bold') LAU
+    div(class='container')
+      h1
+        span(class='thin') PODO
+        span(class='bold') LAU
+
   div(class='container')
     h3='RSVP For: '+ attendees[0]
     form(method="post" action="/een/thanks")
