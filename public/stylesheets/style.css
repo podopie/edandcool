@@ -196,6 +196,15 @@ img.media-object {
         font-family: 'Josefin Sans';
     }
 }
+@media (min-width: 480px) {
+    .jumbotron {
+        background-position: 85% -20px;
+        background-size: cover;
+    }
+    .jumbotron h1 {
+        font-size: 96px;
+    }
+}
 @media (min-width: 768px) {
     .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
         margin-top: 0;
