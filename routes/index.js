@@ -5,36 +5,36 @@ var groomsmen = [{
   name: 'Andrew "Podo" Podojil',
   img: 'guys/andrew2.png',
   story: ['I’m just like Ed but',
-  'Younger and more attractive',
-  'Try to top that one'],
+    'Younger and more attractive',
+    'Try to top that one'],
   }, {
   name: 'Hal "Hal Johnson" Johnson',
   img: 'guys/hal2.png',
-  story: ['Ed\'s best friend since middle school, Hal comes from Viking Town, Norseland. Ed was once saved via Hal\'s viking ship. Pearl Jam!'],
+  story: ['Good friends since middle school, Hal and Ed share bonds of playing instruments larger than themselves, moving to and back from CA, and playing Mega Man 2 constantly.'],
   }, {
   name: 'Jon "The Strap" Ly',
   img: 'guys/jon2.jpg',
-  story: ['Jon and Ed studied "abroad" and lived together at SJSU. Past-times together include Computer Blue and La Vics burritos.'],
+  story: ['Jon, no stranger to the Podojils, met Ed at UConn. They lived together when studying "abroad" at SJSU, but by studied they really mean ate burritos.'],
   }, {
   name: 'Thomson "Oh, you know," Nguyen',
   img: 'guys/thomson2.png',
-  story: ['Drum corps mates, Ed and Thomson always wear the same shoes. Thomson regularly thanks Ed for breaking his cow lamp.'],
+  story: ['When they met at drum corps, Ed broke Thomson\'s cow lamp on accident. But Thomson said the lamp was "awful" and "hated it," and thanked Ed for breaking it.'],
   }, {
   name: 'Mike "Ken" Kendall',
   img: 'guys/kendall2.jpg',
-  story: ['Mike and Ed are often mistaken for being the same tall lanky white male. "Whatever," says Mike, "I\'ma go play some sweet jams."'],
+  story: ['Mike and Ed, rarely seen together with larger groups, are often considered the same tall lanky white male. "Whatever," says Mike, "I\'ma go play some sweet jams."'],
   }, {
   name: 'Pasquale "LGM!" Cusello',
   img: 'guys/pat2.jpg',
-  story: ['Pat represents everything Ed does not: a massive UConn football fan that cares about most sports played on grass.'],
+  story: ['Ed\'s older brother Pat represents everything Ed himself does not: a massive UConn football fan that cares about most sports played on grass.'],
   }
 ]
 
 var bridesmaids = [{
     name: 'Phui "the H is silent" Lau',
     img: 'girls/sis_baby.jpg',
-    // story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, <a href="http://www.instagram.com/misslolalau">Lola</a>. Like any responsible older sibling, she offered Colleen her first beer.',
-    story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, Lola. Like any responsible older sibling, she offered Colleen her first beer.',
+    story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, <a href="http://www.instagram.com/misslolalau", target="_blank">Lola</a>. Like any responsible older sibling, she offered Colleen her first beer.',
+    // story: 'Phui is Colleen\'s sister. She lives in SF and loves her dog, Lola. Like any responsible older sibling, she offered Colleen her first beer.',
 },{
     name: 'Katie "Heeeey roomie" Sawai',
     img: 'girls/katie_baby.jpg',
@@ -71,15 +71,75 @@ router.get('/', function(req, res, next) {
 
 /* GET peeps. */
 router.get('/and/:attendant_id', function(req, res) {
-    var attendees = req.params.attendant_id.split('-');
-    // ughaoasidjaoias i hate javascript
-    attendees = attendees.map(function(x) { return x.split('.').map(function(i) { return i.charAt(0).toUpperCase() + i.slice(1)}).join(' ')})
-    res.render('form', { title: 'Sup sup', attendees: attendees });
+    sheets.spreadsheets.values.get({
+      auth: jwtClient,
+      spreadsheetId: gsconfig.sheet,
+      range: 'urlspaths!A1:Z1000'
+    }, function(err, result) {
+      var arrayLength = result.values.length;
+      for (var i = 0; i < arrayLength; i++) {
+        if (result.values[i][0] == req.params.attendant_id) {
+          var attendees = req.params.attendant_id.split('-');
+          // ughaoasidjaoias i hate javascript
+          attendees = attendees.map(function(x) { return x.split('.').map(function(i) { return i.charAt(0).toUpperCase() + i.slice(1)}).join(' ')})
+          // end hate
+          res.render('form', { title: 'Sup sup', attendees: attendees });
+          return
+        }
+      }
+      res.redirect('/een');
+    })
 });
+
+/* GOOGLE SHEETS */
+var google = require('googleapis');
+var SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+var key = require('../client_secret.json');
+var gsconfig = require('../gsconfig.json');
+
+var jwtClient = new google.auth.JWT(
+  key.client_email,
+  null,
+  key.private_key,
+  SCOPES,
+  null);
+
+var sheets = google.sheets('v4');
+
+var insert_row = function(jwtClient, form_data){
+    sheets.spreadsheets.values.append({
+      auth: jwtClient,
+      spreadsheetId: gsconfig.sheet,
+      range: gsconfig.name + 'A:Z',
+      resource: {
+            majorDimension: 'ROWS',
+            values: form_data
+          },
+      valueInputOption: 'USER_ENTERED'
+    });
+};
+
+var update_row = function(jwtClient, form_data, row){
+    sheets.spreadsheets.values.update({
+      auth: jwtClient,
+      spreadsheetId: gsconfig.sheet,
+      range: gsconfig.name + row
+    });
+};
+
+/* END GOOGLE SHEETS INTEGRATION */
+
 
 /* POST form. */
 router.post('/thanks', function(req, res) {
-    console.log(req.body);
+    var form = req.body;
+    var d = new Date();
+    var data = [[form.name0, form.attend_choice0, form.food_choice0, form.allergies0, form.cake_preference0, d]]
+    if(Object.prototype.hasOwnProperty.call(form, 'name1')){
+      data.push([form.name1, form.attend_choice1, form.food_choice1, form.allergies1, form.cake_preference1, d])
+    }
+    insert_row(jwtClient, data);
+
     res.render('thanks', {req: req });
 });
 
