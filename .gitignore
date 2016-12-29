@@ -37,3 +37,7 @@ node_modules
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# keys
+client_secret.json
+gsconfig.json
