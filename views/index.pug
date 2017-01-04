@@ -47,7 +47,7 @@ block content
         img(src='/images/map/map5.png' class='story')
       div(class='col-md-7')
         h4 The Proposal.
-        p With a PhD, a dog, and their own apartment, Ed proposed to Colleen on Christmas Day, 2015, with a giant rock <a href='http://vignette3.wikia.nocookie.net/pikmin/images/2/2b/Rock_Pikmin-Pikmin3.png/revision/latest?cb=20121129012438', target='_blank'>Pikmin</a> he made.
+        p With a PhD, a dog, and their own apartment, Ed proposed to Colleen on Christmas Day, 2015, with a giant rock [<a href='http://vignette3.wikia.nocookie.net/pikmin/images/2/2b/Rock_Pikmin-Pikmin3.png/revision/latest?cb=20121129012438', target='_blank'>Pikmin</a>] he made.
 
     div(class='col-md-12 top-buffer')
       div(id='and_the_gang' class='fixheight')
@@ -60,7 +60,7 @@ block content
 
         each bridesmaid in bridesmaids
           div(class="media")
-            a(class="media-left")
+            span(class="media-left")
               img(class="media-object" src='/images/' + bridesmaid.img width=100)
             div(class="media-body")
               h4(class="media-heading")= bridesmaid.name
@@ -72,7 +72,7 @@ block content
 
         each groomsman in groomsmen
           div(class="media")
-            a(class="media-left")
+            span(class="media-left")
               img(class="media-object" src='/images/' + groomsman.img width=100)
             div(class="media-body")
               h4(class="media-heading")= groomsman.name
@@ -87,7 +87,7 @@ block content
         div(class='row row-grid')
           div(class='col-md-offset-4 col-md-6')
             div(class="media")
-              a(class="media-left")
+              span(class="media-left")
                 img(class="media-object" src='/images/susi2.jpg' width=100)
               div(class="media-body")
                 h4(class="media-heading txtleft") Susi the flower dog
@@ -96,7 +96,7 @@ block content
         div(class='row row-grid')
           div(class='col-md-offset-4 col-md-6')
             div(class="media")
-              a(class="media-left")
+              span(class="media-left")
                 img(class="media-object" src='/images/khoa.jpg' width=100)
               div(class="media-body")
                 h4(class="media-heading txtleft") Khoa Lam, Officiant
@@ -133,8 +133,8 @@ block content
         strong I want to stay to there.
       div(class='hotel-set')
         h4
-          a(href="http://bit.ly/2j25fB6") Courtyard Marriott
-        a(href="http://bit.ly/2j25fB6")
+          a(href="http://bit.ly/2j25fB6" target='_blank') Courtyard Marriott
+        a(href="http://bit.ly/2j25fB6" target='_blank')
           img(src='/images/marriot.jpg' class='hotel')
       div(class='hotel-set')
         h4
@@ -149,9 +149,6 @@ block content
         img(class="media-object" src='/images/susi5.jpg' width=100)
         span  see you there!
 
-      //- div(class='jumbotron susi')
-
-
   div(class='container')
     p(class='right')
-      em Engagement photos courtesy of <a href='https://www.instagram.com/annebozack/'>Anne Bozack</a>.
+      em Engagement photos courtesy of <a href='https://www.instagram.com/annebozack/' target='_blank'>Anne Bozack</a>.
