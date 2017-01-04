@@ -8,7 +8,7 @@ block content
         span(class='bold') LAU
 
   div(class='container')
-    h3='RSVP For: '+ attendees[0]
+    h3='RSVP For: ' + attendees.join(" & ")
     form(method="post" action="/een/thanks")
       for attendee, i in attendees
         div(class='col-md-6')
@@ -39,14 +39,14 @@ block content
                 option Salted Caramel Butterscotch Pecan Cake
                 option Gianduia (rum chocolate cake, hazelnut buttercream, boysenberry preserves)
       div(class='col-md-12')
-        input(type="submit", value="Are you ready?", class="btn btn-primary")
+        input(type="submit", value="RSVP!", class="btn btn-primary")
 
-        p
-          em
-            small Dessert courtesy of Extraordinary Desserts in Balboa Park.
 
-//- Both names listed (si/nay coming?)
-//- if immediate family or friendz: how many kidz?
-//- food choice and allergies? fish, beef, fish and beef, veggie
-//- CAKE CHOICE! Shangri-la, salted butternut pecan, mocha latte
-//- are you ready?
+
+      p
+        em
+          small Cake courtesy of Extraordinary Desserts in Balboa Park.
+          br
+          small Since we have extended families and friends, we have chosen to limit our guest list to 18 and over unless otherwise informed.
+          br
+          small Please email us if you require additional help. Thank you for understanding.
