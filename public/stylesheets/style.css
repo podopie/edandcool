@@ -65,6 +65,12 @@ img {
     bottom: 0;
 }
 
+.jumbotron.fourohfour {
+    background: url('/images/404.jpg') no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
 .story {
     width: 100%;
 }

@@ -34,15 +34,6 @@ router.use('/', redirector);
 
 app.use('/', router);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -65,5 +56,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  res.status(404).render("nope")
+});
 
 module.exports = app;
