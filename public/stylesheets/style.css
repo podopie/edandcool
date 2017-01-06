@@ -252,6 +252,9 @@ em {
         background-position: center -210px;
         height: 550px;
     }
+    .fill {
+        height: 499px;
+    }
 }
 @media (min-width: 1200px) {
     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
