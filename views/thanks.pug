@@ -4,8 +4,11 @@ block content
   div(class='jumbotron thanks' id='top')
   div(class='container')
     div(class='col-md-12')
-      h1 Thank You!
-      h3 Your RSVP is below:
+      h1 Thank You! Your RSVP is below.
+      p
+        a(href='/een') Back to main wedding page
+      p
+        a(href='/een#and_the_place') Get ceremony location and hotel information
       p <strong>Name:</strong> #{req.body.name0}
       p <strong>Attendance:</strong> #{req.body.attend_choice0}
       p <strong>Meal:</strong> #{req.body.food_choice0}
@@ -18,6 +21,3 @@ block content
         p <strong>Meal:</strong> #{req.body.food_choice1}
         p <strong>Allergies:</strong> #{req.body.allergies1}
         p <strong>Cake:</strong> #{req.body.cake_preference1}
-    div(class='col-md-12')
-      p
-        a(href='/een') Back to main page
