@@ -138,7 +138,7 @@ router.post('/thanks', function(req, res) {
     if(Object.prototype.hasOwnProperty.call(form, 'name1')){
       data.push([form.name1, form.attend_choice1, form.food_choice1, form.allergies1, form.cake_preference1, d])
     }
-    insert_row(jwtClient, data);
+    // insert_row(jwtClient, data);
 
     res.render('thanks', {req: req });
 });
