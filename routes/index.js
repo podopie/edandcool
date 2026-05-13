@@ -92,7 +92,8 @@ router.get('/and/:attendant_id', function(req, res) {
 });
 
 /* GOOGLE SHEETS */
-var google = require('googleapis');
+var googleapis = require('googleapis');
+var google = googleapis.google;
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 var key = require('../client_secret.json');
 var gsconfig = require('../gsconfig.json');
@@ -104,7 +105,10 @@ var jwtClient = new google.auth.JWT(
   SCOPES,
   null);
 
-var sheets = google.sheets('v4');
+var sheets = google.sheets({
+  version: 'v4',
+  auth: jwtClient
+});
 
 var insert_row = function(jwtClient, form_data){
     sheets.spreadsheets.values.append({
